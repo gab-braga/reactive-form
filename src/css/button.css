@@ -1,0 +1,16 @@
+button,
+input[type=button] {
+    color: white;
+    padding: 0.5rem 1rem;
+    background: none;
+    text-transform: uppercase;
+    border: var(--gray-border);
+}
+
+button:hover,
+button:focus,
+input[type=button]:hover,
+input[type=button]:focus {
+    outline: none;
+    border-color: #444444;
+}
