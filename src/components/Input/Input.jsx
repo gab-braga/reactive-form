@@ -1,11 +1,17 @@
 import React from 'react';
 import "./Input.css";
 
-export default ({ label, type, id, name, value, setValue }) => {
-
-    function handleChange({ target }) {
-        setValue(target.value);
-    }
+export default ({
+    label,
+    type,
+    id,
+    name,
+    value,
+    error,
+    message,
+    handleChange,
+    handleBlur
+}) => {
 
     return (
         <div>
@@ -16,8 +22,10 @@ export default ({ label, type, id, name, value, setValue }) => {
                 name={name}
                 value={value}
                 onChange={handleChange}
+                onBlur={handleBlur}
             />
-            <div>{value}</div>
+
+            {error && <p className="error">{message}</p>}
         </div>
     );
 }

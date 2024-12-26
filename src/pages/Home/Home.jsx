@@ -1,20 +1,20 @@
 import React from 'react';
 import "./Home.css";
 import Input from '../../components/Input/Input';
+import useInput from '../../hooks/useInput';
 
 export default () => {
-
-    const [quest1, setQuest1] = React.useState("");
+    const cep = useInput("cep", "", { type: "cep", required: true });
 
     return (
         <div className="container">
-            <h1>Bitcoin Question</h1>
+            <h1>Cadastre-se</h1>
             <form>
                 <fieldset>
-                    <legend>Explique o conceito de "Bitcoin"?</legend>
-                    <Input label="Resposta" id="q1" name="q1" value={quest1} setValue={setQuest1} />
+                    <legend>Dados de Endereço</legend>
+                    <Input label="CEP" id="cep" {...cep} />
                 </fieldset>
-                
+
                 <button>Enviar</button>
             </form>
         </div>
